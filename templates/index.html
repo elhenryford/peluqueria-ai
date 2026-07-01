@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Peluquería AI</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <h1>Peluquería AI</h1>
+
+    <p class="subtitulo">
+        Cambia el peinado utilizando Inteligencia Artificial
+    </p>
+
+    <form id="formulario" enctype="multipart/form-data">
+
+        <div class="paneles">
+
+            <div class="panel">
+
+                <h2>Cliente</h2>
+
+                <img id="previewCliente" src="" hidden>
+
+                <input
+                    type="file"
+                    id="cliente"
+                    name="cliente"
+                    accept="image/*">
+
+            </div>
+
+            <div class="panel">
+
+                <h2>Corte</h2>
+
+                <img id="previewCorte" src="" hidden>
+
+                <input
+                    type="file"
+                    id="corte"
+                    name="corte"
+                    accept="image/*">
+
+            </div>
+
+        </div>
+
+        <button type="submit">
+
+            Generar Peinado
+
+        </button>
+
+    </form>
+
+    <div id="cargando" hidden>
+
+        Procesando...
+
+    </div>
+
+    <div id="resultado">
+
+        <h2>Resultado</h2>
+
+        <img id="imagenResultado" hidden>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>
