@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Historial de Cortes</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #111;
+            color: white;
+        }
+
+        .card {
+            background: #222;
+            padding: 15px;
+            margin: 15px;
+            border-radius: 10px;
+        }
+
+        img {
+            width: 200px;
+            border-radius: 8px;
+            margin-right: 10px;
+        }
+
+        .row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>📸 Historial de Cortes</h1>
+
+{% if data|length == 0 %}
+    <p>No hay historial aún.</p>
+{% endif %}
+
+{% for item in data %}
+<div class="card">
+    <p><b>Fecha:</b> {{ item.fecha }}</p>
+
+    <div class="row">
+        <div>
+            <p>Original</p>
+            <img src="{{ item.original }}">
+        </div>
+
+        <div>
+            <p>Corte</p>
+            <img src="{{ item.corte }}">
+        </div>
+
+        <div>
+            <p>Resultado</p>
+            <img src="{{ item.resultado }}">
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+</body>
+</html>

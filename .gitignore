@@ -1,10 +1,35 @@
+# =========================
+# Python
+# =========================
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+
+# =========================
+# Entornos virtuales
+# =========================
 venv/
+.venv/
 env/
-uploads/
-salida/
-temp/
-logs/
-.env
+
+# =========================
+# Archivos del sistema
+# =========================
 .DS_Store
+Thumbs.db
+
+# =========================
+# Variables de entorno
+# =========================
+.env
+
+# =========================
+# Archivos temporales
+# =========================
+salida/
+resultados/
+
+# Imágenes temporales
+uploads/cara.*
+uploads/corte.*
+uploads/original.*

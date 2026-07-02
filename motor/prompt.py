@@ -1,0 +1,1 @@
+# Construye el prompt automáticamente
