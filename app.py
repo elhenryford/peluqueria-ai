@@ -179,8 +179,5 @@ def abrir():
 
 
 if __name__ == "__main__":
-    if os.environ.get("RENDER"):
-        app.run(host="0.0.0.0", port=10000)
-    else:
-        threading.Timer(1.5, abrir).start()
-        app.run(debug=True)
+    threading.Timer(1.5, abrir).start()
+    app.run(debug=True)
