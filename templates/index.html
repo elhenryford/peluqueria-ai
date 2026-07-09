@@ -79,7 +79,41 @@
     </div>
 
 </div>
+<div id="debug-panel" style="
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    width: 400px;
+    height: 300px;
+    background: black;
+    color: lime;
+    font-family: monospace;
+    font-size: 12px;
+    overflow: auto;
+    padding: 10px;
+    border-radius: 10px;
+">
+    <b>DEBUG PANEL</b>
+    <div id="logs"></div>
+</div>
 
+<script>
+async function cargarLogs() {
+    const res = await fetch("/debug");
+    const data = await res.json();
+
+    const cont = document.getElementById("logs");
+    cont.innerHTML = "";
+
+    data.logs.forEach(l => {
+        const div = document.createElement("div");
+        div.textContent = l;
+        cont.appendChild(div);
+    });
+}
+
+setInterval(cargarLogs, 1000);
+</script>
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </body>
